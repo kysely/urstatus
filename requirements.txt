@@ -1,0 +1,2 @@
+rumps>=0.2.2
+requests>=2.18.4
