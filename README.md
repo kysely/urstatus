@@ -13,6 +13,8 @@
     </a>
 </h4>
 
+[![URStatus screenshot](./resources/screenshot.png)](https://github.com/kysely/urstatus/releases/latest)
+
 
 <br />
 
