@@ -34,6 +34,7 @@ def get_update(api_key: Token=None) -> Update:
 
     if res.status_code != 200:
         raise RuntimeError(f'Cannot contact API: Status {res.status_code}')
+
     parsed_res = res.json()
     parsed_projects = map(parse_project, parsed_res)
     potential_revenue = sum(map(lambda p: float(p['price']), parsed_res))
@@ -47,7 +48,7 @@ def make_menu(update: Update) -> Menu:
 
     projects = map(
         lambda p: '$%s %s (%s left)' % (p['price'], p['name'], p['remaining']),
-        list(update[2]))
+        update[2])
 
     return [
         'Potential revenue: $%.2f' % update[1],
